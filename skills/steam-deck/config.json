@@ -1,0 +1,51 @@
+{
+  "deck_host": "<deck-ssh-host-or-ip>",
+  "deck_user": "<deck-user>",
+  "ssh_key": "<path-to-ssh-private-key>",
+  "ssh_opts": "-o ConnectTimeout=8 -o BatchMode=yes",
+  "userdata_discovery": "ls -td ~/.local/share/Steam/userdata/*/config/localconfig.vdf 2>/dev/null | head -1 | xargs -r dirname",
+  "userdata_note": "Discover the userdata dir on each run. Never hard-code the id.",
+  "lock_dir": "/tmp/deck-lock",
+  "lock_owner_file": "/tmp/deck-lock/owner",
+  "lock_owner_format": "lane pid iso-time",
+  "poll_s": 5,
+  "max_wake_wait_s": 300,
+  "shot_remote_path": "/tmp/shot.png",
+  "shot_env": "XDG_RUNTIME_DIR=/run/user/1000 WAYLAND_DISPLAY=gamescope-0",
+  "shot_width": 1280,
+  "resize_cmd": "sips -Z",
+  "game_running_check": "pgrep -f '[r]eaper SteamLaunch'",
+  "steam_gaming_unit": "steam-launcher.service",
+  "projects": {
+    "<game>": {
+      "deploy_script": "tools/deck/deploy.sh",
+      "shortcut_script": "tools/deck/steam_shortcut.py",
+      "input_script": "tools/deck/steam_input.py",
+      "template_script": "tools/deck/get_template.py",
+      "profile_script": "tools/deck/profile.py",
+      "export_preset": "Linux",
+      "build_dir": "build/deck",
+      "binary": "<Game>.x86_64",
+      "gdextension_so": "<optional: linux .so of each GDExtension addon>",
+      "play_install_dir": "<install-dir-on-deck, relative to the deck user's home>",
+      "play_shortcut_name": "<Game>",
+      "perf_install_dir": "<perf-install-dir-on-deck>",
+      "perf_shortcut_name": "<Game> (perf)",
+      "perf_install_flags": "--perf (or --install-dir with --shortcut-name)",
+      "bridge_port": "<game-bridge-port>",
+      "shots_dir": "shots/deck",
+      "quality_preset_file": "data/balance/quality.json",
+      "quality_preset_name": "deck"
+    }
+  },
+  "_sources": {
+    "deck_host": "The user's Steam Deck on the local network",
+    "ssh_key": "deploy.sh DECK_KEY default",
+    "lock_dir": "Team-lead brief: 2 agents overwrote the play build",
+    "poll_s": "Every wait sleeps 5 s max",
+    "max_wake_wait_s": "gotchas.md 2: a Deck that is off never wakes",
+    "shot_env": "Default Deck user id 1000 and the gamescope display",
+    "perf_shortcut_name": "Team-lead brief: test builds and the play build install apart",
+    "sudo": "Never store the Deck sudo password here or in any skill file."
+  }
+}

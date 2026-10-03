@@ -1,0 +1,7 @@
+.venv/
+.venv.lock/
+__pycache__/
+*.pyc
+tools/godot_bg/nofocus.dylib
+.DS_Store
+work/

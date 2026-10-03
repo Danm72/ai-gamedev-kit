@@ -1,0 +1,171 @@
+{
+  "_sources": "USER = a decision the user made. PROPOSED = an agent suggested it; the user can change it. A later bake-off changes route here, not the SKILL.md prose. Fill every <placeholder> before the first run.",
+  "style_key_path": "refs/<picked_key>.png",
+  "style_key_status": "While style_key_path holds the <picked_key> placeholder, use the one PNG in refs/. With none or several, stop before a concept and ask the user for the key.",
+  "credits_policy": "USER: credits have no set limit. Never assume a limit. Pick routes by quality (route order), never default to Meshy because of a balance, no cost or credit talk. Ask the user to top up only when a provider refuses a job. Change this text if you want a budget.",
+  "route": {
+    "prop": [
+      [
+        "hf_concept",
+        "tripo_h31"
+      ],
+      [
+        "hf_concept",
+        "meshy7_image"
+      ],
+      [
+        "hf_concept",
+        "bpy_geometry",
+        "meshy_retexture"
+      ]
+    ],
+    "humanoid": [
+      [
+        "hf_concept",
+        "tripo_h31",
+        "meshy_rig",
+        "meshy_animate",
+        "meshy_animate"
+      ],
+      [
+        "hf_concept",
+        "tripo_h31",
+        "opus_rig"
+      ]
+    ],
+    "creature": [
+      [
+        "hf_concept",
+        "tripo_h31",
+        "opus_rig"
+      ],
+      [
+        "hf_concept",
+        "meshy7_image",
+        "opus_rig"
+      ]
+    ],
+    "modular": [
+      [
+        "hf_concept",
+        "bpy_geometry",
+        "meshy_retexture"
+      ]
+    ],
+    "vehicle": [
+      [
+        "hf_concept",
+        "tripo_h31",
+        "split_moving_parts"
+      ],
+      [
+        "hf_concept",
+        "meshy7_image",
+        "split_moving_parts"
+      ]
+    ],
+    "interior": [
+      [
+        "hf_concept",
+        "tripo_h31"
+      ],
+      [
+        "hf_concept",
+        "meshy7_image"
+      ]
+    ],
+    "surface": [
+      [
+        "gemini_image_tileable",
+        "godot_material"
+      ],
+      [
+        "hf_texture_tileable",
+        "godot_material"
+      ]
+    ],
+    "vfx": [
+      [
+        "gemini_image_flipbook",
+        "godot_particles"
+      ],
+      [
+        "hf_image_flipbook",
+        "godot_particles"
+      ]
+    ]
+  },
+  "route_flags": {
+    "creature": "unproven on creature: the bake-off made no creature with Tripo, and the Meshy quadruped rig failed 3 of 3"
+  },
+  "multi_view_sheet": {
+    "prop": false,
+    "humanoid": false,
+    "creature": false,
+    "modular": false,
+    "vehicle": false,
+    "interior": false,
+    "surface": false
+  },
+  "multi_view_sheet_note": "humanoid is a flag to test (a Meshy multi-image diver passed the rig once, n=1); the bake-off multi-view gave no gain on props",
+  "tris_cap": {
+    "prop": 10000,
+    "humanoid": 12000,
+    "creature": 12000,
+    "modular": 4000,
+    "vehicle": 20000,
+    "interior": 20000
+  },
+  "height_tolerance": 0.05,
+  "texture_px": 1024,
+  "max_concept_retries": 2,
+  "max_paid_fails_per_tool": 2,
+  "max_art_retries": 2,
+  "max_godot_instances": 6,
+  "godot_timeout_s": 300,
+  "meshy_rig_height_m": 1.7,
+  "ledger_path": "docs/ledger.tsv",
+  "ledger_columns": [
+    "ts",
+    "service",
+    "tool",
+    "asset",
+    "agent",
+    "credits",
+    "balance_after",
+    "job_id",
+    "note"
+  ],
+  "godot_slots_path": "work/manager/godot-slots.tsv",
+  "src_dir": "assets/_src/<asset>/",
+  "staging_dir": "assets/_staging/",
+  "final_dir": "assets/v2/<class>/",
+  "bakeoff_dir": "<path-to-your-bakeoff-notes-and-meshy-ledger>",
+  "bakeoff_shared_dir": "<path-to-your-pipeline-scripts: meshy.py, clean_static.py, merge_meshy_humanoid.py, validate.py, render.sh>",
+  "blender_bin": "/opt/homebrew/bin/blender",
+  "godot_bin": "/opt/homebrew/bin/godot",
+  "timeout_bin": "/opt/homebrew/bin/timeout",
+  "banned_sources": [
+    "kenney",
+    "kaykit",
+    "quaternius",
+    "synty",
+    "low.?poly"
+  ],
+  "banned_prompt_words": [
+    "game-ready",
+    "game ready",
+    "low-poly",
+    "low poly"
+  ],
+  "route_order_note": "Each route list is in bake-off quality order. Tripo won on both tested assets, so it is first for prop, humanoid and creature. vehicle, interior, surface and vfx are PROPOSED routes from the Crush Depth build: the Tripo sub hull looked good, the coded floor, cockpit and bubbles did not.",
+  "concept_fallback": "a Gemini image tool, when Higgsfield refuses a concept job",
+  "look_gate": "USER: no art bar. look-critic gives an A/B call and a gap list; the user decides after they see the render next to the key.",
+  "grid_source": "scripts/pieces.gd",
+  "editor_owned_paths": [
+    "scripts/editor*",
+    "tools/mcp/",
+    "data/placements.json",
+    "data/hud_layout.json"
+  ]
+}

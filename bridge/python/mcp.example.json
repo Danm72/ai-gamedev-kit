@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "game": {
+      "command": "bash",
+      "args": ["tools/mcp/run.sh"],
+      "env": {
+        "BRIDGE_PORT": "9177",
+        "GAME_NAME": "My Game"
+      }
+    }
+  }
+}

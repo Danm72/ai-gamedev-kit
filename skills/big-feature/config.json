@@ -1,0 +1,40 @@
+{
+  "feature_dir_pattern": "docs/features/<slug>/FEATURE.md",
+  "feature_max_words": 600,
+  "max_questions": 3,
+  "research_max_sources": 6,
+  "research_max_words": 300,
+  "research_sources_dir": "research-sources/",
+  "options_min": 2,
+  "options_max": 3,
+  "size_scale": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "design_doc_path": "docs/design.md",
+  "code_dirs": [
+    "scripts/",
+    "data/"
+  ],
+  "balance_dir": "data/balance/",
+  "editor_owned": [
+    "data/placements.json",
+    "data/hud_layout.json",
+    "scripts/editor*",
+    "tools/mcp/"
+  ],
+  "reply_max_lines": 6,
+  "route_lanes_to": "game-manager",
+  "route_visual_to": "look-critic",
+  "route_art_to": "asset-forge",
+  "route_build_check_to": "feature-breaker",
+  "banned_art_sources": [
+    "kenney",
+    "kaykit",
+    "quaternius",
+    "synty",
+    "low-poly kit"
+  ]
+}

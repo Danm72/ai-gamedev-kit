@@ -1,0 +1,22 @@
+{
+  "feature_dir_pattern": "docs/features/<slug>/",
+  "test_cmd": "bash tests/smoke.sh",
+  "breaker_ranks": ["Must", "Should", "Could", "Defer"],
+  "fix_attempts_max": 2,
+  "breaker_passes_max": 2,
+  "disprove_drop_below": 50,
+  "breaker_model": "<subagent-model>",
+  "bridge_addr": "127.0.0.1:<bridge-port>",
+  "balance_dir": "data/balance/",
+  "editor_owned_files": ["data/placements.json", "data/hud_layout.json", "scripts/editor*", "scripts/world_editor.gd", "scripts/hud_editor.gd", "scripts/edit_data.gd", "tools/mcp/"],
+  "max_godot_instances": 6,
+  "godot_timeout_s": 300,
+  "timeout_bin": "timeout",
+  "godot_slot_file": "work/manager/godot-slots.tsv",
+  "poll_max_s": 5,
+  "route_visual_to": "look-critic",
+  "route_balance_to": "playtest-bot",
+  "route_lanes_to": "game-manager",
+  "reply_max_lines": 6,
+  "size_scale": ["S", "M", "L", "XL"]
+}
